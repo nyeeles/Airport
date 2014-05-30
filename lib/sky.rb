@@ -7,4 +7,8 @@ class Sky
 	def air_space
 		@air_space
 	end
+
+	def add(plane)
+		@air_space << plane
+	end
 end
