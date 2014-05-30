@@ -12,12 +12,11 @@ class Airport
 		@terminal << plane
 	end
 
-	def dispatch(plane)
-		terminal.delete(plane)
+	def dispatch
+		terminal.pop
 	end
 
 	def plane_count
 		terminal.count
 	end
-
 end
