@@ -12,7 +12,11 @@ class Sky
 		@air_space << plane.fly!
 	end
 
-	def descend
-		@air_space.pop
+	def descend(plane)
+		air_space.delete(plane)
+	end
+
+	def plane_count
+		air_space.count
 	end
 end

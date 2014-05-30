@@ -5,7 +5,7 @@ require 'plane'
 describe 'Traffic Controller' do
 	
 	let(:controller) { TrafficController.new }
-	let(:gatwick) { Airport.new }
+	let(:airport) { Airport.new }
 	let(:plane) { Plane.new }
 	let(:sky) { Sky.new }
 
@@ -15,8 +15,14 @@ describe 'Traffic Controller' do
 	end
 
 	it 'can make a plane take off, transfering from airport to sky' do
-		gatwick.park(plane)
-		controller.dispatch_plane_from(gatwick, plane, sky)
-		expect(gatwick.plane_count).to eq 0
+		airport.park(plane)
+		controller.dispatch_plane_from(airport, plane, sky)
+		expect(airport.plane_count).to eq 0
+	end
+
+	it 'can make a plane land at an airport' do
+		sky.add(plane)
+		controller.descend_plane_from(sky, plane, airport)
+		expect(sky.plane_count).to eq 0
 	end
 end

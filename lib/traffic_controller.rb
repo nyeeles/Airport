@@ -8,4 +8,10 @@ class TrafficController
 		plane.fly!
 		sky.add(plane)
 	end
+
+	def descend_plane_from(sky, plane, airport)
+		sky.descend(plane)
+		plane.land!
+		airport.park(plane)
+	end
 end

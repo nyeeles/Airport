@@ -21,7 +21,7 @@ describe 'Sky' do
 
 	it 'can descend a plane to land' do
 		sky.add(plane)
-		sky.descend
+		sky.descend(plane)
 		expect(sky.air_space).to be_empty
 	end
 end
