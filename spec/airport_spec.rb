@@ -21,8 +21,8 @@ describe 'Airport' do
 
 	it 'allows planes to dispatch the airport, one at a time' do
 		gatwick.park(plane)
-		gatwick.park(plane)
-		gatwick.dispatch
+		gatwick.park(Plane.new)
+		gatwick.dispatch(plane)
 		expect(gatwick.plane_count).to eq 1
 	end
 

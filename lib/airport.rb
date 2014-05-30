@@ -9,11 +9,11 @@ class Airport
 	end
 
 	def park(plane)
-		@terminal << plane.land!
+		terminal << plane.land!
 	end
 
-	def dispatch
-		terminal.pop
+	def dispatch(plane)
+		terminal.delete(plane)
 	end
 
 	def plane_count
