@@ -19,4 +19,8 @@ class Sky
 	def plane_count
 		air_space.count
 	end
+
+	def bad_weather?
+		[[true]*3, false].flatten.sample
+	end
 end

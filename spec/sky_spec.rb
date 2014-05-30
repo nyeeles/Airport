@@ -24,4 +24,10 @@ describe 'Sky' do
 		sky.descend(plane)
 		expect(sky.air_space).to be_empty
 	end
+
+	# it 'can sometimes have bad weather conditions' do
+	# 	sky = double :sky, bad_weather? :true
+
+	# 	expect(sky).to eq true if sky.bad_weather? == true
+	# end
 end
