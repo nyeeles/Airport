@@ -14,8 +14,12 @@ class TrafficController
 	end
 
 	def descend_plane_from(sky, plane, airport)
-		sky.descend(plane)
-		plane.land!
-		airport.park(plane)
+		if sky.bad_weather? == false
+			sky.descend(plane)
+			plane.land!
+			airport.park(plane)
+		else
+			puts "bad weather"
+		end
 	end
 end
