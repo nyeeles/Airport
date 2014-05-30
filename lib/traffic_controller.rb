@@ -4,9 +4,13 @@ require_relative 'sky'
 class TrafficController
 
 	def dispatch_plane_from(airport, plane, sky)
-		airport.dispatch(plane)
-		plane.fly!
-		sky.add(plane)
+		if sky.bad_weather? == false
+			airport.dispatch(plane)
+			plane.fly!
+			sky.add(plane)
+		else
+			puts "bad weather"
+		end
 	end
 
 	def descend_plane_from(sky, plane, airport)

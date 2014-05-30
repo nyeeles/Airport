@@ -21,6 +21,6 @@ class Sky
 	end
 
 	def bad_weather?
-		[[true]*3, false].flatten.sample
+		[[false]*3, true].flatten.sample
 	end
 end
