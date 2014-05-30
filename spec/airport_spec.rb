@@ -20,4 +20,10 @@ describe 'Airport' do
 		expect(gatwik.terminal).to be_empty
 	end
 
+	it 'can count how many planes are parked in the terminal' do
+		gatwik.park(plane)
+		expect(gatwik.plane_count).to eq 1
+	end
+
+
 end

@@ -15,4 +15,9 @@ class Airport
 	def dispatch(plane)
 		terminal.delete(plane)
 	end
+
+	def plane_count
+		terminal.count
+	end
+
 end
