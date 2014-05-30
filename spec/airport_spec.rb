@@ -14,4 +14,10 @@ describe 'Airport' do
 		expect(gatwik.terminal).to_not be_empty	
 	end
 
+	it 'allows planes to dispatch the airport' do
+		gatwik.park(plane)
+		gatwik.dispatch(plane)
+		expect(gatwik.terminal).to be_empty
+	end
+
 end
