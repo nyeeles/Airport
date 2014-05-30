@@ -6,6 +6,11 @@ class Plane
 
 	def fly!
 		@flying = true
+		self
+	end
+
+	def land!
+		@flying = false
 	end
 
 	def flying?
