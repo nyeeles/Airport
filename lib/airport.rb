@@ -7,4 +7,8 @@ class Airport
 	def terminal
 		@terminal
 	end
+
+	def park(plane)
+		@terminal << plane
+	end
 end
