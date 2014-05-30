@@ -6,7 +6,6 @@ describe 'Airport' do
 	let(:plane) { Plane.new }
 	
 	it 'can be empty' do
-		gatwik = Airport.new
 		expect(gatwik.terminal).to be_empty
 	end
 
