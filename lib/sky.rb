@@ -9,6 +9,6 @@ class Sky
 	end
 
 	def add(plane)
-		@air_space << plane
+		@air_space << plane.fly!
 	end
 end

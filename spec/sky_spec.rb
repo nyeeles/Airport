@@ -13,4 +13,9 @@ describe 'Sky' do
 		sky.add(plane)
 		expect(sky.air_space).to_not be_empty
 	end
+
+	it 'changes planes status to \'flying\'' do
+		expect(plane).to receive(:fly!)
+		sky.add(plane)
+	end
 end

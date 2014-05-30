@@ -2,27 +2,27 @@ require 'airport'
 
 describe 'Airport' do
 
-	let(:gatwik) { Airport.new }
+	let(:gatwick) { Airport.new }
 	let(:plane) { Plane.new }
 	
 	it 'can be empty' do
-		expect(gatwik.terminal).to be_empty
+		expect(gatwick.terminal).to be_empty
 	end
 
 	it 'can store a plane' do
-		gatwik.park(plane)
-		expect(gatwik.terminal).to_not be_empty	
+		gatwick.park(plane)
+		expect(gatwick.terminal).to_not be_empty	
 	end
 
 	it 'can count how many planes are parked in the terminal' do
-		gatwik.park(plane)
-		expect(gatwik.plane_count).to eq 1
+		gatwick.park(plane)
+		expect(gatwick.plane_count).to eq 1
 	end
 
 	it 'allows planes to dispatch the airport, one at a time' do
-		gatwik.park(plane)
-		gatwik.park(plane)
-		gatwik.dispatch
-		expect(gatwik.plane_count).to eq 1
+		gatwick.park(plane)
+		gatwick.park(plane)
+		gatwick.dispatch
+		expect(gatwick.plane_count).to eq 1
 	end
 end

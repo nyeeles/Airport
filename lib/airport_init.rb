@@ -3,5 +3,5 @@ require_relative 'plane'
 require_relative 'sky'
 
 @plane = Plane.new
-@gatwik = Airport.new
+@gatwick = Airport.new
 @sky = Sky.new
