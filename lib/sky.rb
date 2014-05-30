@@ -11,4 +11,8 @@ class Sky
 	def add(plane)
 		@air_space << plane.fly!
 	end
+
+	def descend
+		@air_space.pop
+	end
 end

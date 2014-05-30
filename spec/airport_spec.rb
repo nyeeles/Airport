@@ -25,4 +25,9 @@ describe 'Airport' do
 		gatwick.dispatch
 		expect(gatwick.plane_count).to eq 1
 	end
+
+	it 'changes planes status to \'not flying\'' do
+		expect(plane).to receive(:land!)
+		gatwick.park(plane)
+	end
 end

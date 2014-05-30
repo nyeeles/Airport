@@ -18,4 +18,10 @@ describe 'Sky' do
 		expect(plane).to receive(:fly!)
 		sky.add(plane)
 	end
+
+	it 'can descend a plane to land' do
+		sky.add(plane)
+		sky.descend
+		expect(sky.air_space).to be_empty
+	end
 end

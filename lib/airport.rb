@@ -9,7 +9,7 @@ class Airport
 	end
 
 	def park(plane)
-		@terminal << plane
+		@terminal << plane.land!
 	end
 
 	def dispatch
