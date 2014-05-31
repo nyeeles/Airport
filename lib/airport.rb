@@ -4,21 +4,14 @@ class Airport
 
 	include PlaneStorage
 
-	# alias :terminal :plane_storage
+	def initialize
+		@terminal ||= []
+	end
 
-	alias :park :add
+	def storage
+		@terminal
+	end
 
-	alias :dispatch :release
+	alias depart release
 
-	# def terminal
-	# 	@plane_storage
-	# end
-
-	# def park(plane)
-	# 	add(plane).land!
-	# end
-
-	# def dispatch(plane)
-	# 	release(plane)
-	# end
 end

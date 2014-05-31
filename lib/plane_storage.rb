@@ -1,7 +1,11 @@
 module PlaneStorage
 
-	def add(plane)
-		storage << plane
+	def add_flying(plane)
+		storage << plane.fly!
+	end
+
+	def add_landing(plane)
+		storage << plane.land!
 	end
 
 	def release(plane)
@@ -11,4 +15,5 @@ module PlaneStorage
 	def plane_count
 		storage.count
 	end
+
 end
