@@ -10,19 +10,19 @@ describe 'Traffic Controller' do
 	let(:sky) { Sky.new }
 
 	it 'can signal a plane to take off' do
-		expect(controller).to receive(:dispatch_plane_from)
-		controller.dispatch_plane_from
+		expect(controller).to receive(:departing)
+		controller.departing
 	end
 
 	it 'can make a plane take off, transfering from airport to sky' do
-		airport.park(plane)
-		controller.dispatch_plane_from(airport, plane, sky)
+		airport.add_landing(plane)
+		controller.departing(plane, airport, sky)
 		expect(airport.plane_count).to eq 0
 	end
 
 	it 'can make a plane land at an airport' do
-		sky.add(plane)
-		controller.descend_plane_from(sky, plane, airport)
+		sky.add_flying(plane)
+		controller.descending(plane, sky, airport)
 		expect(sky.plane_count).to eq 0
 	end
 
