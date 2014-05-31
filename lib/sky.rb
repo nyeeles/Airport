@@ -1,24 +1,39 @@
 class Sky
 
+	include PlaneStorage
+
 	def initialize
-		@air_space ||= []
+		@airspace ||= []
 	end
 
-	def air_space
-		@air_space
+	def storage
+		@airspace
 	end
 
-	def add(plane)
-		@air_space << plane.fly!
+	alias descend release
+
+	def change_flying_status
+		@airspace.each {|plane| plane.fly! }
 	end
 
-	def descend(plane)
-		air_space.delete(plane)
-	end
 
-	def plane_count
-		air_space.count
-	end
+
+
+	# def air_space
+	# 	@air_space
+	# end
+
+	# def add(plane)
+	# 	@air_space << plane.fly!
+	# end
+
+	# def descend(plane)
+	# 	air_space.delete(plane)
+	# end
+
+	# def test
+	# 	air_space.count
+	# end
 
 	def bad_weather?
 		[[false]*3, true].flatten.sample

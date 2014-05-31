@@ -1,22 +1,24 @@
+require_relative 'plane_storage'
+
 class Airport
 
-	def initialize
-		@terminal ||= []
-	end
+	include PlaneStorage
 
-	def terminal
-		@terminal
-	end
+	# alias :terminal :plane_storage
 
-	def park(plane)
-		terminal << plane.land!
-	end
+	alias :park :add
 
-	def dispatch(plane)
-		terminal.delete(plane)
-	end
+	alias :dispatch :release
 
-	def plane_count
-		terminal.count
-	end
+	# def terminal
+	# 	@plane_storage
+	# end
+
+	# def park(plane)
+	# 	add(plane).land!
+	# end
+
+	# def dispatch(plane)
+	# 	release(plane)
+	# end
 end
