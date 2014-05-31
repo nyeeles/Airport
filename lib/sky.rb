@@ -1,3 +1,5 @@
+require_relative 'plane_storage'
+
 class Sky
 
 	include PlaneStorage

@@ -1,4 +1,5 @@
 require 'sky'
+require 'plane'
 
 describe 'Sky' do
 	
@@ -6,23 +7,23 @@ describe 'Sky' do
 	let(:plane) { Plane.new }
 	
 	it 'can be empty' do
-		expect(sky.air_space).to be_empty
+		expect(sky.storage).to be_empty
 	end
 
 	it 'can have a plane' do
-		sky.add(plane)
-		expect(sky.air_space).to_not be_empty
+		sky.add_flying(plane)
+		expect(sky.storage).to_not be_empty
 	end
 
 	it 'changes planes status to \'flying\'' do
 		expect(plane).to receive(:fly!)
-		sky.add(plane)
+		sky.add_flying(plane)
 	end
 
 	it 'can descend a plane to land' do
-		sky.add(plane)
+		sky.add_flying(plane)
 		sky.descend(plane)
-		expect(sky.air_space).to be_empty
+		expect(sky.storage).to be_empty
 	end
 
 	# it 'can sometimes have bad weather conditions' do
