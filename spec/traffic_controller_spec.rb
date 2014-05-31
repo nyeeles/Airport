@@ -27,11 +27,10 @@ describe 'Traffic Controller' do
 	end
 
 	# it 'will not allow a plane to take off if weather is bad' do
-	# 	airport.park(plane)
-	# 	test = double :sky, bad_weather?: :true
-	# 	:sky.test
-	# 	controller.dispatch_plane_from(airport, plane, sky)
-	# 	expect(airport.plane_count).to eq 1
+	# 	weather_warning = double :sky, bad_weather?: true
+	# 	# :sky.add_flying(plane)
+	# 	expect(sky).to receive :bad_weather?.and_return true
+	# 	sky.bad_weather?
 	# end
 
 end
