@@ -26,9 +26,9 @@ describe 'Sky' do
 		expect(sky.storage).to be_empty
 	end
 
-	# it 'can sometimes have bad weather conditions' do
-	# 	sky = double :sky, bad_weather? :true
-
-	# 	expect(sky).to eq true if sky.bad_weather? == true
-	# end
+	it 'can sometimes have bad weather conditions' do
+		sky = double sky, bad_weather?: true
+		expect(sky).to receive(:bad_weather?).and_return true
+		sky.bad_weather?
+	end
 end

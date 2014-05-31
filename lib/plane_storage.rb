@@ -15,5 +15,4 @@ module PlaneStorage
 	def plane_count
 		storage.count
 	end
-
 end

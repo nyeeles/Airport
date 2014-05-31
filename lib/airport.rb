@@ -2,7 +2,7 @@ require_relative 'plane_storage'
 
 class Airport
 
-	include PlaneStorage
+  include PlaneStorage
 
 	def initialize
 		@terminal ||= []
@@ -13,5 +13,4 @@ class Airport
 	end
 
 	alias depart release
-
 end
