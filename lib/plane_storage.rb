@@ -7,6 +7,7 @@ module PlaneStorage
 	end
 
 	def add_landing(plane)
+		capacity_error
 		storage << plane.land!
 	end
 
@@ -20,5 +21,9 @@ module PlaneStorage
 
 	def full?
 		self.plane_count == DEFAULT_CAPACITY
+	end
+
+	def capacity_error
+		raise "WARNING: Full capacity reached!" if self.full?
 	end
 end
