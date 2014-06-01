@@ -16,6 +16,6 @@ class Airport
 	alias depart release
 
 	def capacity_error
-		raise "WARNING: #{self} has reached max capacity!" if self.full?
+		raise "WARNING: Heathrow has reached max capacity! David Cameron is still fighting with Boris Johnson about building Terminal 6." if self.full?
 	end
 end

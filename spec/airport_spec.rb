@@ -55,6 +55,3 @@ describe 'Airport' do
 		gatwick.add_landing(plane)
 	end
 end
-
-
-

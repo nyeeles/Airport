@@ -26,11 +26,9 @@ describe 'Traffic Controller' do
 		expect(sky.plane_count).to eq 0
 	end
 
-	# it 'will not allow a plane to take off if weather is bad' do
-	# 	weather_warning = double :sky, bad_weather?: true
-	# 	# :sky.add_flying(plane)
-	# 	expect(sky).to receive :bad_weather?.and_return true
-	# 	sky.bad_weather?
-	# end
-
+	it 'can sometimes have bad weather conditions' do
+		the_sky = double the_sky, weather_warning: 'Stormy weather!'
+		expect(the_sky).to receive(:weather_warning).and_return 'Stormy weather!'
+		the_sky.weather_warning
+	end
 end
