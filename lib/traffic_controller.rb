@@ -18,5 +18,4 @@ class TrafficController
 	def weather_warning
 		raise "Stormy weather!"
 	end
-
 end

@@ -1,0 +1,3 @@
+class StormyWeatherException < Exception 
+	
+end
