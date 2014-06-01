@@ -4,7 +4,7 @@ class Airport
 
   include PlaneStorage
 
-  	DEFAULT_CAPACITY = 10
+  	# DEFAULT_CAPACITY = 10
 
 	def initialize
 		@terminal ||= []
@@ -12,10 +12,6 @@ class Airport
 
 	def storage
 		@terminal
-	end
-
-	def full?
-		self.plane_count == DEFAULT_CAPACITY
 	end
 
 	alias depart release

@@ -37,6 +37,13 @@ describe 'Airport' do
 		expect(gatwick.plane_count).to eq 10
 		expect(gatwick).to be_full
 	end
+
+	# it 'doesn\'t allow more planes to be added if it has reached capacity' do
+	# 	10.times {gatwick.add_landing(plane)}
+	# 	gatwick.add_landing(plane)
+	# 	gatwick.capacity_error
+	# 	expect(gatwick.plane_count).to eq 10
+	# end
 end
 
 

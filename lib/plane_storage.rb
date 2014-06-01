@@ -1,5 +1,7 @@
 module PlaneStorage
 
+	DEFAULT_CAPACITY = 10
+
 	def add_flying(plane)
 		storage << plane.fly!
 	end
@@ -14,5 +16,9 @@ module PlaneStorage
 
 	def plane_count
 		storage.count
+	end
+
+	def full?
+		self.plane_count == DEFAULT_CAPACITY
 	end
 end
