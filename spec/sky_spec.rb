@@ -26,6 +26,23 @@ describe 'Sky' do
 		expect(sky.storage).to be_empty
 	end
 
+	it 'has a default capacity' do
+		10.times {sky.add_flying(plane)}
+		expect(sky).to be_full
+	end
+
+	it 'allows user to manually set a capacity' do
+		sky.capacity=(15)
+		10.times {sky.add_flying(plane)}
+		expect(sky).to_not be_full
+	end
+
+	it 'allows user to manually set a capacity when creating a new instance of Sky' do
+		sky2 = Sky.new({capacity: 15})
+		10.times {sky2.add_flying(plane)}
+		expect(sky2).to_not be_full
+	end
+
 	it 'executes an error message if it has reached capacity' do
 		10.times {sky.add_flying(plane)}
 		expect(sky).to receive :capacity_error

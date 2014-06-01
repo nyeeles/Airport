@@ -4,8 +4,9 @@ class Sky
 
   include PlaneStorage
 
-	def initialize
+	def initialize(options = {})
 		@airspace ||= []
+		self.capacity = options.fetch(:capacity, capacity)
 	end
 
 	def storage

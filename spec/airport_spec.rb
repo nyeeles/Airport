@@ -38,6 +38,12 @@ describe 'Airport' do
 	end
 
 	it 'allows user to manually set a capacity' do
+		gatwick.capacity=(15)
+		10.times {gatwick.add_landing(plane)}
+		expect(gatwick).to_not be_full
+	end
+
+	it 'allows user to manually set a capacity when creating a new instance of Airport' do
 		heathrow = Airport.new({capacity: 15})
 		10.times {heathrow.add_landing(plane)}
 		expect(heathrow).to_not be_full
