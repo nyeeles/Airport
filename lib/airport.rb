@@ -4,10 +4,9 @@ class Airport
 
   include PlaneStorage
 
-  	# DEFAULT_CAPACITY = 10
-
-	def initialize
+	def initialize(options = {})
 		@terminal ||= []
+		self.capacity = options.fetch(:capacity, capacity)
 	end
 
 	def storage
@@ -15,4 +14,8 @@ class Airport
 	end
 
 	alias depart release
+
+	def capacity_error
+		raise "WARNING: #{self} has reached max capacity!" if self.full?
+	end
 end

@@ -34,8 +34,13 @@ describe 'Airport' do
 
 	it 'has a default capacity' do
 		10.times {gatwick.add_landing(plane)}
-		expect(gatwick.plane_count).to eq 10
 		expect(gatwick).to be_full
+	end
+
+	it 'allows user to manually set a capacity' do
+		heathrow = Airport.new({capacity: 15})
+		10.times {heathrow.add_landing(plane)}
+		expect(heathrow).to_not be_full
 	end
 
 	it 'executes an error message if it has reached capacity' do

@@ -26,6 +26,12 @@ describe 'Sky' do
 		expect(sky.storage).to be_empty
 	end
 
+	it 'executes an error message if it has reached capacity' do
+		10.times {sky.add_flying(plane)}
+		expect(sky).to receive :capacity_error
+		sky.add_flying(plane)
+	end
+
 	it 'can sometimes have bad weather conditions' do
 		sky = double sky, bad_weather?: true
 		expect(sky).to receive(:bad_weather?).and_return true
