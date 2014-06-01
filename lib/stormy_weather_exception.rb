@@ -1,3 +1,0 @@
-class StormyWeatherException < Exception 
-	
-end
