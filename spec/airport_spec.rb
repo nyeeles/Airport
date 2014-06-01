@@ -31,4 +31,13 @@ describe 'Airport' do
 		expect(plane).to receive(:land!)
 		gatwick.add_landing(plane)
 	end
+
+	it 'has a default capacity' do
+		10.times {gatwick.add_landing(plane)}
+		expect(gatwick.plane_count).to eq 10
+		expect(gatwick).to be_full
+	end
 end
+
+
+

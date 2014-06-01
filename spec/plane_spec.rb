@@ -18,5 +18,4 @@ describe 'Plane' do
 		plane.fly!.land!
 		expect(plane).to_not be_flying
 	end
-
 end
