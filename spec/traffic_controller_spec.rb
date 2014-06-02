@@ -9,6 +9,10 @@ describe 'Traffic Controller' do
 	let(:plane) { Plane.new }
 	let(:sky) { Sky.new }
 
+	before(:each) do
+		sky.stub(:bad_weather?).and_return false
+	end
+
 	it 'can signal a plane to take off' do
 		expect(controller).to receive(:departing)
 		controller.departing
@@ -27,8 +31,7 @@ describe 'Traffic Controller' do
 	end
 
 	it 'can sometimes have bad weather conditions' do
-		the_sky = double the_sky, weather_warning: 'Stormy weather!'
-		expect(the_sky).to receive(:weather_warning).and_return 'Stormy weather!'
-		the_sky.weather_warning
+		sky.stub(:bad_weather?).and_return true
+		expect{ controller.departing(plane, airport, sky) }.to raise_error("Stormy weather!")
 	end
 end

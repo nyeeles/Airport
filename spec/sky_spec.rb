@@ -50,7 +50,7 @@ describe 'Sky' do
 	end
 
 	it 'can sometimes have bad weather conditions' do
-		sky = double sky, bad_weather?: true
+		sky.stub(:bad_weather?).and_return true
 		expect(sky).to receive(:bad_weather?).and_return true
 		sky.bad_weather?
 	end
